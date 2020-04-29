@@ -17,6 +17,7 @@ const path           = require('path');
 const site           = require('./site');
 const token          = require('./token');
 const user           = require('./user');
+const usersDb   = require('./db/users');
 
 console.log('Using MongoDB for the data store');
 
@@ -81,6 +82,10 @@ app.post('/oauth/token',               oauth2.token);
 
 app.get('/api/userinfo',   user.info);
 app.get('/api/clientinfo', client.info);
+
+app.post('/api/user', (req, res, next) => {
+  usersDb.create(req.body).then(()=>next());
+}, site.login);
 
 // Mimicking google's token info endpoint from
 // https://developers.google.com/accounts/docs/OAuth2UserAgent#validatetoken
