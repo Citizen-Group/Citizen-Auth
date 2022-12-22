@@ -18,7 +18,7 @@
     "ejs": "^2.5.x",
     "express": "^4.10.x",
     "express-session": "^1.9.x",
-    "jsonwebtoken": "^7.2.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.9.9",
     "mongoose-sequence": "^5.2.2",
     "oauth2orize": "^1.0.x",
